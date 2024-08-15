@@ -1,7 +1,7 @@
 {
-  "name": "lossless-json",
+  "name": "lossless-json-no-nullish-coalescing-operator",
   "version": "4.0.1",
-  "description": "Parse JSON without risk of losing numeric information",
+  "description": "Temporary fork of lossless-json",
   "main": "lib/umd/lossless-json.js",
   "module": "lib/esm/index.js",
   "browser": "lib/umd/lossless-json.js",
