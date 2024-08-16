@@ -119,56 +119,14 @@ export function parse(
   function parseValue(): unknown {
     skipWhitespace()
 
-    function getValue() {
-      const parseStringVal = parseString()
-      if (parseStringVal !== null && parseStringVal !== undefined) {
-        return parseStringVal
-      } 
-
-      const parseNumericVal = parseNumeric()
-      if (parseNumericVal !== null && parseNumericVal !== undefined) {
-        return parseNumericVal
-      }
-
-      const parseObjectVal = parseObject()
-      if (parseObjectVal !== null && parseObjectVal !== undefined) {
-        return parseObjectVal
-      }
-
-      const parseArrayVal = parseArray()
-      if (parseArrayVal !== null && parseArrayVal !== undefined) {
-        return parseArrayVal
-      }
-
-      const parseKeywordValTrue = parseKeyword('true', true)
-      if (parseKeywordValTrue !== null && parseKeywordValTrue !== undefined) {
-        return parseKeywordValTrue
-      }
-
-      const parseKeywordValFalse = parseKeyword('false', false)
-      if (parseKeywordValFalse !== null && parseKeywordValFalse !== undefined) {
-        return parseKeywordValFalse
-      }
-
-      const parseKeywordValNull = parseKeyword('null', null)
-      if (parseKeywordValNull !== null && parseKeywordValNull !== undefined) {
-        return parseKeywordValNull
-      }
-      
-      return undefined
-    }
-
-    const value = getValue()
-
-    // long story short: can't import 3rd-party packages with ?? operator 
-    // const value =
-    //   parseString() ??
-    //   parseNumeric() ??
-    //   parseObject() ??
-    //   parseArray() ??
-    //   parseKeyword('true', true) ??
-    //   parseKeyword('false', false) ??
-    //   parseKeyword('null', null)
+    const value =
+      parseString() ??
+      parseNumeric() ??
+      parseObject() ??
+      parseArray() ??
+      parseKeyword('true', true) ??
+      parseKeyword('false', false) ??
+      parseKeyword('null', null)
 
     skipWhitespace()
 
