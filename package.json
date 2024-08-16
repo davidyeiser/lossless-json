@@ -1,6 +1,6 @@
 {
   "name": "lossless-json-no-nullish-coalescing-operator",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Temporary fork of lossless-json",
   "main": "lib/umd/lossless-json.js",
   "module": "lib/esm/index.js",
